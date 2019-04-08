@@ -32,7 +32,7 @@ nhl_theme_switcher <- function() {
 
   server <- function(input, output, session) {
 
-    team_colors <- readxl::read_excel("data/team_colors.xlsx")
+    team_colors <- readxl::read_excel("inst/extdata/team_colors.xlsx")
 
     # Listen for 'done' events. When we're finished, we'll update the theme, and then stop the gadget.
     observeEvent(input$done, {

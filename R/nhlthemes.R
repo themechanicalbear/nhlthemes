@@ -5,4 +5,5 @@
 #' @import shiny
 #' @import miniUI
 #' @import dplyr
+#' @import knitr
 NULL
