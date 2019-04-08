@@ -25,10 +25,9 @@ nhl_theme_switcher <- function() {
   )
 
   server <- function(input, output, session) {
-
+    # If you want to mofify the colors used update this spreadsheet and then rerun the use_data function
     # team_colors <- readxl::read_excel("inst/extdata/team_colors.xlsx")
     # usethis::use_data(team_colors, internal = TRUE)
-    # load("R/sysdata.rda")
     team_colors
 
     # Listen for 'done' events. When we're finished, we'll update the theme, and then stop the gadget.
