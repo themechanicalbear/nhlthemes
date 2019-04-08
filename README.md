@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/themechanicalbear/nhlthemes.svg?branch=master)](https://travis-ci.org/themcehanicalbear/nhlthemes)
 
 # nhlthemes
-nhlthemes enables R Studio users to quickly switch between the NHL team colored theme of their preference through the [R Studio addins](https://rstudio.github.io/rstudioaddins/) functionality.
+nhlthemes enables R Studio users to quickly switch between the NHL team colored theme of their preference through the [R Studio addins](https://rstudio.github.io/rstudioaddins/) functionality. This package currenlty only works on MAC. Place the NHL_Light_rstheme file in the ~/.R/rstudio/themes folder on your MAC.
 
 Demo:
 ![](nhlthemes_demo.gif)
