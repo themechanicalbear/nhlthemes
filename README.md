@@ -11,7 +11,7 @@ Once the nhlthemes package is installed, functionality is added automatically to
 ## Installation
 ```
 # install.packages("devtools")
-devtools::install_github("mechanicalbear/nhlthemes")
+devtools::install_github("themechanicalbear/nhlthemes")
 ```
 
 ## Valid team theme names are:
