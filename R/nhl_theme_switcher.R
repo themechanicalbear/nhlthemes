@@ -1,10 +1,4 @@
-# library(shiny)
-# library(miniUI)
-# library(dplyr)
-
 options(stringsAsFactors = FALSE)
-
-# team_colors <- readxl::read_excel("data/team_colors.xlsx")
 
 # We'll wrap our Shiny Gadget in an addin.
 # Let's call it 'nhl_theme_switcher()'.
