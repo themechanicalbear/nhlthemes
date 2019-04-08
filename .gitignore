@@ -35,7 +35,7 @@
 *.nb.html
 
 # Data files (sample data for testing included in data/git_options)
-inst/*
+# inst/*
 
 tests/testthat/*
 # inst/doc

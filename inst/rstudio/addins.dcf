@@ -1,0 +1,4 @@
+Name: NHL Team Themes
+Description: Choose your favorite NHL team.
+Binding: nhl_theme_switcher
+Interactive: true
