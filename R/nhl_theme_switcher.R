@@ -134,131 +134,98 @@ nhl_theme_switcher <- function() {
     observeEvent(input$wild_click, {set_colors("wild")})
     observeEvent(input$wings_click, {set_colors("wings")})
 
-
     output$avalanche <- renderImage({
-      list(src = system.file("extdata/logos", "avalanche.gif", package = "nhlthemes"))
-    }, deleteFile = FALSE)
+      list(src = system.file("extdata/logos", "avalanche.gif", package = "nhlthemes"))}, deleteFile = FALSE)
 
     output$blackhawks <- renderImage({
-      list(src = system.file("extdata/logos", "blackhawks.gif", package = "nhlthemes"))
-    }, deleteFile = FALSE)
+      list(src = system.file("extdata/logos", "blackhawks.gif", package = "nhlthemes"))}, deleteFile = FALSE)
 
     output$blues <- renderImage({
-      list(src = system.file("extdata/logos", "blues.gif", package = "nhlthemes"))
-    }, deleteFile = FALSE)
+      list(src = system.file("extdata/logos", "blues.gif", package = "nhlthemes"))}, deleteFile = FALSE)
 
     output$bruins <- renderImage({
-      list(src = system.file("extdata/logos", "bruins.gif", package = "nhlthemes"))
-    }, deleteFile = FALSE)
+      list(src = system.file("extdata/logos", "bruins.gif", package = "nhlthemes"))}, deleteFile = FALSE)
 
     output$canadiens <- renderImage({
-      list(src = system.file("extdata/logos", "canadiens.gif", package = "nhlthemes"))
-    }, deleteFile = FALSE)
+      list(src = system.file("extdata/logos", "canadiens.gif", package = "nhlthemes"))}, deleteFile = FALSE)
 
     output$canucks <- renderImage({
-      list(src = system.file("extdata/logos", "canucks.gif", package = "nhlthemes"))
-    }, deleteFile = FALSE)
+      list(src = system.file("extdata/logos", "canucks.gif", package = "nhlthemes"))}, deleteFile = FALSE)
 
     output$capitals <- renderImage({
-      list(src = system.file("extdata/logos", "capitals.gif", package = "nhlthemes"))
-    }, deleteFile = FALSE)
+      list(src = system.file("extdata/logos", "capitals.gif", package = "nhlthemes"))}, deleteFile = FALSE)
 
     output$coyotes <- renderImage({
-      list(src = system.file("extdata/logos", "coyotes.gif", package = "nhlthemes"))
-    }, deleteFile = FALSE)
+      list(src = system.file("extdata/logos", "coyotes.gif", package = "nhlthemes"))}, deleteFile = FALSE)
 
     output$devils <- renderImage({
-      list(src = system.file("extdata/logos", "devils.gif", package = "nhlthemes"))
-    }, deleteFile = FALSE)
+      list(src = system.file("extdata/logos", "devils.gif", package = "nhlthemes"))}, deleteFile = FALSE)
 
     output$ducks <- renderImage({
-      list(src = system.file("extdata/logos", "ducks.gif", package = "nhlthemes"))
-    }, deleteFile = FALSE)
+      list(src = system.file("extdata/logos", "ducks.gif", package = "nhlthemes"))}, deleteFile = FALSE)
 
     output$flames <- renderImage({
-      list(src = system.file("extdata/logos", "flames.gif", package = "nhlthemes"))
-    }, deleteFile = FALSE)
+      list(src = system.file("extdata/logos", "flames.gif", package = "nhlthemes"))}, deleteFile = FALSE)
 
     output$flyers <- renderImage({
-      list(src = system.file("extdata/logos", "flyers.gif", package = "nhlthemes"))
-    }, deleteFile = FALSE)
+      list(src = system.file("extdata/logos", "flyers.gif", package = "nhlthemes"))}, deleteFile = FALSE)
 
     output$hurricanes <- renderImage({
-      list(src = system.file("extdata/logos", "hurricanes.gif", package = "nhlthemes"))
-    }, deleteFile = FALSE)
+      list(src = system.file("extdata/logos", "hurricanes.gif", package = "nhlthemes"))}, deleteFile = FALSE)
 
     output$islanders <- renderImage({
-      list(src = system.file("extdata/logos", "islanders.gif", package = "nhlthemes"))
-    }, deleteFile = FALSE)
+      list(src = system.file("extdata/logos", "islanders.gif", package = "nhlthemes"))}, deleteFile = FALSE)
 
     output$jackets <- renderImage({
-      list(src = system.file("extdata/logos", "jackets.gif", package = "nhlthemes"))
-    }, deleteFile = FALSE)
+      list(src = system.file("extdata/logos", "jackets.gif", package = "nhlthemes"))}, deleteFile = FALSE)
 
     output$jets <- renderImage({
-      list(src = system.file("extdata/logos", "jets.gif", package = "nhlthemes"))
-    }, deleteFile = FALSE)
+      list(src = system.file("extdata/logos", "jets.gif", package = "nhlthemes"))}, deleteFile = FALSE)
 
     output$kings <- renderImage({
-      list(src = system.file("extdata/logos", "kings.gif", package = "nhlthemes"))
-    }, deleteFile = FALSE)
+      list(src = system.file("extdata/logos", "kings.gif", package = "nhlthemes"))}, deleteFile = FALSE)
 
     output$knights <- renderImage({
-      list(src = system.file("extdata/logos", "knights.gif", package = "nhlthemes"))
-    }, deleteFile = FALSE)
+      list(src = system.file("extdata/logos", "knights.gif", package = "nhlthemes"))}, deleteFile = FALSE)
 
     output$leafs <- renderImage({
-      list(src = system.file("extdata/logos", "leafs.gif", package = "nhlthemes"))
-    }, deleteFile = FALSE)
+      list(src = system.file("extdata/logos", "leafs.gif", package = "nhlthemes"))}, deleteFile = FALSE)
 
     output$lightning <- renderImage({
-      list(src = system.file("extdata/logos", "lightning.gif", package = "nhlthemes"))
-    }, deleteFile = FALSE)
+      list(src = system.file("extdata/logos", "lightning.gif", package = "nhlthemes"))}, deleteFile = FALSE)
 
     output$oilers <- renderImage({
-      list(src = system.file("extdata/logos", "oilers.gif", package = "nhlthemes"))
-    }, deleteFile = FALSE)
+      list(src = system.file("extdata/logos", "oilers.gif", package = "nhlthemes"))}, deleteFile = FALSE)
 
     output$panthers <- renderImage({
-      list(src = system.file("extdata/logos", "panthers.gif", package = "nhlthemes"))
-    }, deleteFile = FALSE)
+      list(src = system.file("extdata/logos", "panthers.gif", package = "nhlthemes"))}, deleteFile = FALSE)
 
     output$penguins <- renderImage({
-      list(src = system.file("extdata/logos", "penguins.gif", package = "nhlthemes"))
-    }, deleteFile = FALSE)
+      list(src = system.file("extdata/logos", "penguins.gif", package = "nhlthemes"))}, deleteFile = FALSE)
 
     output$predators <- renderImage({
-      list(src = system.file("extdata/logos", "predators.gif", package = "nhlthemes"))
-    }, deleteFile = FALSE)
+      list(src = system.file("extdata/logos", "predators.gif", package = "nhlthemes"))}, deleteFile = FALSE)
 
     output$rangers <- renderImage({
-      list(src = system.file("extdata/logos", "rangers.gif", package = "nhlthemes"))
-    }, deleteFile = FALSE)
+      list(src = system.file("extdata/logos", "rangers.gif", package = "nhlthemes"))}, deleteFile = FALSE)
 
     output$sabres <- renderImage({
-      list(src = system.file("extdata/logos", "sabres.gif", package = "nhlthemes"))
-    }, deleteFile = FALSE)
+      list(src = system.file("extdata/logos", "sabres.gif", package = "nhlthemes"))}, deleteFile = FALSE)
 
     output$senators <- renderImage({
-      list(src = system.file("extdata/logos", "senators.gif", package = "nhlthemes"))
-    }, deleteFile = FALSE)
+      list(src = system.file("extdata/logos", "senators.gif", package = "nhlthemes"))}, deleteFile = FALSE)
 
     output$sharks <- renderImage({
-      list(src = system.file("extdata/logos", "sharks.gif", package = "nhlthemes"))
-    }, deleteFile = FALSE)
+      list(src = system.file("extdata/logos", "sharks.gif", package = "nhlthemes"))}, deleteFile = FALSE)
 
     output$stars <- renderImage({
-      list(src = system.file("extdata/logos", "stars.gif", package = "nhlthemes"))
-    }, deleteFile = FALSE)
+      list(src = system.file("extdata/logos", "stars.gif", package = "nhlthemes"))}, deleteFile = FALSE)
 
     output$wild <- renderImage({
-      list(src = system.file("extdata/logos", "wild.gif", package = "nhlthemes"))
-    }, deleteFile = FALSE)
+      list(src = system.file("extdata/logos", "wild.gif", package = "nhlthemes"))}, deleteFile = FALSE)
 
     output$wings <- renderImage({
-      list(src = system.file("extdata/logos", "wings.gif", package = "nhlthemes"))
-    }, deleteFile = FALSE)
-
+      list(src = system.file("extdata/logos", "wings.gif", package = "nhlthemes"))}, deleteFile = FALSE)
   }
 
   viewer <- dialogViewer(dialogName = "NHL Themes", width = 1200, height = 600)
