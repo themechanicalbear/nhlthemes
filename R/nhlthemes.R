@@ -2,6 +2,7 @@
 #'
 #' @docType package
 #' @name nhlthemes
+#' @importFrom glue glue
 #' @import shiny
 #' @import miniUI
 #' @import dplyr

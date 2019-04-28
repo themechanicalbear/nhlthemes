@@ -6,13 +6,14 @@ Authors@R: c(
     person("Jason", "Taylor", , "jason@themechanicalbear.com", c("aut", "cre"))
     )
 Maintainer: The package maintainer <jason@themechanicalbear.com>
-Description: RStudio addin to swtich to NHL colored themes
+Description: RStudio addin to swtich to NHL colored themes.
 BugReports: https://github.com/themechanicalbear/nhlthemes/issues
-License: GPL-2 | file LICENSE
+License: GPL-2
 Encoding: UTF-8
 LazyData: true
 Depends: R (>= 3.1.2)
 Imports: 
+    glue,
     dplyr,
     shiny,
     miniUI,

@@ -1,0 +1,373 @@
+/* rs-theme-name: NHL_Light */
+/* rs-theme-is-dark: FALSE */
+
+
+:root {
+  --gutter_line_numbers: #FD4300;
+  --chunk_queued_line: #000000;
+  --chunk_executed_line: #000000;
+  --chunk_resting_line: #000000;
+  --chunk_error_line: #000000;
+  --active_line: #FD4300;
+  --cursor: #FD4300;
+  --function_color: #FD4300;
+  --library: #FD4300;
+  --keywords: #FD4300;
+  --main-bg-color: #FFFFFF;
+}
+
+/* Color of the line numbers in editor */
+.ace_gutter {
+  background: var(--main-bg-color);
+  color: var(--gutter_line_numbers);
+}
+/* Color of the queued chunk */
+.ace_chunk-queued-line:before {
+    position: absolute;
+    top: 0;
+    right: 3px;
+    content: "";
+    display: block;
+    height: 100%;
+    width: 7px;
+    z-index: -100;
+    background-color: var(--chunk_queued_line);
+    opacity: .5;
+}
+/* Color of the currently executing chunk */
+.ace_chunk-executed-line:before {
+    position: absolute;
+    top: 0;
+    right: 3px;
+    content: "";
+    display: block;
+    height: 100%;
+    width: 7px;
+    z-index: -100;
+    background-color: var(--chunk_executed_line);
+    opacity: 1;
+}
+/* Color of the current line */
+.ace_chunk-resting-line:before {
+    position: absolute;
+    top: 0;
+    right: 3px;
+    content: "";
+    display: block;
+    height: 100%;
+    width: 7px;
+    z-index: -100;
+    background-color: var(--chunk_resting_line);
+    opacity: 1;
+}
+/* Color of the error chunk */
+.ace_chunk-error-line:before {
+    position: absolute;
+    top: 0;
+    right: 3px;
+    content: "";
+    display: block;
+    height: 100%;
+    width: 7px;
+    z-index: -100;
+    background-color: var(--chunk_error_line);
+    opacity: 1;
+}
+/* Active line gradient overlay */
+.ace_marker-layer .ace_active-line {
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--main-bg-color),
+    var(--main-bg-color) 15px,
+    var(--active_line) 15px,
+    var(--active_line) 25px
+  );
+  opacity: 0.05;
+}
+/* Color of the cursor only */
+.ace_cursor {
+  color: var(--cursor);
+}
+/* Color of function calls */
+.ace_support.ace_function {
+  color: var(--function_color);
+}
+/* Color of library:: like dplyr::filter */
+.ace_support.ace_class {
+  font-style: italic;
+  color: var(--library);
+}
+/* Color of keywords like Library and the console prompt */
+.ace_keyword {
+  color: var(--keywords);
+}
+/* Color NULL, TRUE, FALSE, Warnings and Messages */
+.ace_constant.ace_language, .ace_constant{
+  color: #FF0000;
+}
+/* Color of the default system text */
+.ace_editor, .rstudio-themes-flat.ace_editor_theme .profvis-flamegraph, .rstudio-themes-flat.ace_editor_theme, .rstudio-themes-flat .ace_editor_theme {
+  background-color: var(--main-bg-color);
+  color: #000000;
+}
+/* Color of puncuation , + ( ) */
+.ace_keyword.ace_operator {
+  color: #000000;
+}
+/* Color of comments */
+.ace_comment {
+  color: #000000;
+}
+/* Color of constant numeric values */
+.ace_constant.ace_numeric {
+  color: #000000;
+}
+/* Color of strings */
+.ace_string {
+  color: #000000;
+}
+
+
+
+
+
+/* Backgrounds and text formating */
+
+.ace_print-margin {
+  width: 1px;
+  background: #e8e8e8;
+}
+
+.ace_marker-layer .ace_selection {
+  background: #50575f80;
+}
+
+.ace_selection.ace_start {
+  box-shadow: 0 0 3px 0px var(--main-bg-color);
+  border-radius: 2px;
+}
+
+.ace_marker-layer .ace_step {
+  background: rgb(198, 219, 174);
+}
+
+.ace_marker-layer .ace_bracket {
+  margin: -1px 0 0 -1px;
+  border: 1px solid #2F3540;
+}
+
+
+
+
+
+
+
+.ace_constant.ace_language.ace_boolean.ace_text {
+  font-style: italic;
+}
+
+.ace_constant.ace_numeric.ace_text {
+  font-weight: 700;
+}
+
+.ace_gutter-active-line {
+  background-color: #23282E;
+}
+
+.ace_marker-layer .ace_selected-word {
+  border: 1px solid rgba(240, 200, 91, 0.75);
+}
+
+.ace_fold {
+    background-color: var(--main-color-1);
+    border-color: #000000;
+}
+
+.normal-mode .ace_cursor {
+  border: 0!important;
+
+  animation-name: color;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: step-start;
+  opacity: 0.75;
+}
+
+@keyframes color {
+  0% {
+    background-color: #ff00a9;
+  }
+  20% {
+    background-color: #7c3eff;
+  }
+  40% {
+    background-color: #64f3f0;
+  }
+  60% {
+    background-color: #4fe818;
+  }
+  80% {
+    background-color: #ffc400;
+  }
+  100 {
+    background-color: #ff0010;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ace_support.ace_function.ace_codeend {
+  font-style: italic;
+  color: rgba(240, 200, 91, 1.00);
+}
+
+.ace_support.ace_constant {
+  color: rgba(222, 98, 98, 1.00);
+}
+
+.ace_support.ace_constant.ace_property-value {
+  color: rgba(240, 200, 91, 1.00);
+}
+
+.ace_support.ace_type {
+  font-style: italic;
+  color: rgba(222, 98, 98, 1.00);
+}
+
+.ace_storage {
+  color: rgba(222, 98, 98, 1.00);
+}
+
+.ace_storage.ace_type {
+  color: #fba480;
+}
+
+.ace_invalid {
+  color: rgba(255, 255, 255, 1.00);
+  background-color: rgba(0, 211, 248, 1.00);
+}
+
+.ace_invalid.ace_deprecated {
+  color: rgba(255, 255, 255, 1.00);
+  background-color: rgba(0, 211, 248, 1.00);
+}
+
+.ace_variable {
+  font-style: italic;
+  color: rgba(240, 200, 91, 1.00);
+}
+
+.ace_entity.ace_other.ace_attribute-name {
+  color: rgba(222, 98, 98, 1.00);
+}
+
+.ace_entity.ace_name.ace_function {
+  font-style: italic;
+  color: rgba(240, 200, 91, 1.00);
+}
+
+.ace_entity.ace_name.ace_tag {
+  color: #fba480;
+}
+
+.nocolor.ace_editor .ace_line span {
+  color: #fba480 !important;
+}
+.ace_bracket {
+  margin: 0 !important;
+  border: 0 !important;
+  background-color: rgba(128, 128, 128, 0.5);
+}
+.ace_marker-layer .ace_foreign_line {
+  position: absolute;
+  z-index: -1;
+  background-color: #F3F3F3;
+}
+.ace_marker-layer .ace_active_debug_line {
+  position: absolute;
+  z-index: -1;
+  background-color: #938536;
+}
+.ace_marker-layer .ace_find_line {
+  position: absolute;
+  z-index: -1;
+  background-color: #4E5052;
+}
+.ace_console_error {
+  background-color: #4E5052;
+}
+.terminal {
+  background-color: var(--main-bg-color);
+  color: #000000;
+  font-feature-settings: "liga" 0;
+  position: relative;
+  user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+}
+.terminal.xterm-cursor-style-block.focus:not(.xterm-cursor-blink-on) .terminal-cursor {
+  background-color: #CCC;
+  color: #1e1e1e;
+}
+.terminal.focus.xterm-cursor-style-bar:not(.xterm-cursor-blink-on) .terminal-cursor::before,
+.terminal.focus.xterm-cursor-style-underline:not(.xterm-cursor-blink-on) .terminal-cursor::before {
+  content: '';
+  position: absolute;
+  background-color: #CCC;
+}
+.terminal:not(.focus) .terminal-cursor {
+  outline: 1px solid #CCC;
+  outline-offset: -1px;
+}
+.terminal .xterm-selection div {
+   position: absolute;
+   background-color: #CCC;
+}
+.terminal .xterm-viewport {
+  background-color: var(--main-bg-color);
+  overflow-y: scroll;
+}
+
+.rstudio-themes-flat.editor_dark.ace_editor_theme a {
+   color: #FFF !important;
+}
+
+.ace_layer {
+   z-index: 3;
+}
+
+.ace_layer.ace_print-margin-layer {
+   z-index: 2;
+}
+
+.ace_layer.ace_marker-layer {
+   z-index: 1;
+}
+.rstudio-themes-flat.rstudio-themes-dark-menus .ace_editor.ace_autocomplete {
+   background: #2f3941;
+   border: solid 1px #4e5c68 !important;
+   color: #f0f0f0;
+}
+
+
+
+.rstudio-themes-flat.rstudio-themes-dark-menus .ace_editor.ace_autocomplete .ace_marker-layer .ace_active-line,
+.rstudio-themes-flat.rstudio-themes-dark-menus .ace_editor.ace_autocomplete .ace_marker-layer .ace_line-hover {
+   background: rgba(255, 255, 255, 0.15);
+   border: none
+}
+
