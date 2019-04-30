@@ -60,21 +60,20 @@ nhl_theme_switcher <- function() {
     team_colors
 
     set_colors <- function(team) {
-      color_gutter_line_numbers = team_colors[team_colors$team == team, "gutter_line_numbers"]
-      color_chunk_queued_line = team_colors[team_colors$team == team, "chunk_queued_line"]
-      color_chunk_executed_line = team_colors[team_colors$team == team, "chunk_executed_line"]
-      color_chunk_resting_line = team_colors[team_colors$team == team, "chunk_resting_line"]
-      color_chunk_error_line = team_colors[team_colors$team == team, "chunk_error_line"]
-      color_active_line = team_colors[team_colors$team == team, "active_line"]
-      color_cursor = team_colors[team_colors$team == team, "cursor"]
-      color_function_color = team_colors[team_colors$team == team, "function_color"]
-      color_library = team_colors[team_colors$team == team, "library"]
-      color_keywords = team_colors[team_colors$team == team, "keywords"]
+      color_gutter_line_numbers = team_colors[team_colors$team == team, "gutter_line_numbers"][[1]]
+      color_chunk_queued_line = team_colors[team_colors$team == team, "chunk_queued_line"][[1]]
+      color_chunk_executed_line = team_colors[team_colors$team == team, "chunk_executed_line"][[1]]
+      color_chunk_resting_line = team_colors[team_colors$team == team, "chunk_resting_line"][[1]]
+      color_chunk_error_line = team_colors[team_colors$team == team, "chunk_error_line"][[1]]
+      color_active_line = team_colors[team_colors$team == team, "active_line"][[1]]
+      color_cursor = team_colors[team_colors$team == team, "cursor"][[1]]
+      color_function_color = team_colors[team_colors$team == team, "function_color"][[1]]
+      color_library = team_colors[team_colors$team == team, "library"][[1]]
+      color_keywords = team_colors[team_colors$team == team, "keywords"][[1]]
       bg_team = team
 
       if (input$dark == "dark") {
         css <- readLines("~/.R/rstudio/themes/NHL_Dark.rstheme",-1)
-        # css[6] = paste0("  --main-color-1: ", color_1, ";")
         writeLines(css, "~/.R/rstudio/themes/NHL_Dark.rstheme")
         rstudioapi::applyTheme("NHL_Dark")
       }
@@ -85,23 +84,23 @@ nhl_theme_switcher <- function() {
           nhl_theme_css <- readLines(system.file("extdata", "NHL_Light.rstheme", package = "nhlthemes"), -1)
           writeLines(nhl_theme_css, glue(themes_folder_mac, "NHL_Light.rstheme"))
         }
+        # Check to see if logo for team is in the themes directory if not copy from package library
         if (!file.exists(glue(themes_folder_mac, "/logos/", bg_team, ".gif"))) {
           file.copy(glue(lib_path, "/nhlthemes/extdata/logos/", bg_team, ".gif"),
                     glue(themes_folder_mac, "logos/", bg_team, ".gif"))
         }
         css <- readLines("~/.R/rstudio/themes/NHL_Light.rstheme",-1)
-        css[6] = glue("  --gutter_line_numbers: ", color_gutter_line_numbers, ";")
-        css[7] = paste0("  --chunk_queued_line: ", color_chunk_queued_line, ";")
-        css[8] = paste0("  --chunk_executed_line: ", color_chunk_executed_line, ";")
-        css[9] = paste0("  --chunk_resting_line: ", color_chunk_resting_line, ";")
-        css[10] = paste0("  --chunk_error_line: ", color_chunk_error_line, ";")
-        css[11] = paste0("  --active_line: ", color_active_line, ";")
-        css[12] = paste0("  --cursor: ", color_cursor, ";")
-        css[13] = paste0("  --function_color: ", color_function_color, ";")
-        css[14] = paste0("  --library: ", color_library, ";")
-        css[15] = paste0("  --keywords: ", color_keywords, ";")
-        css[16] = paste0("  --background_image: ", "url('logos/", bg_team, ".gif')", ";")
-        # css[16] = paste0("  --background_image: ", "url(", lib_path, "/nhlthemes/extdata/logos/", bg_team, ".gif)", ";")
+        css[6] = glue("  --gutter_line_numbers: ", {color_gutter_line_numbers}, ";")
+        css[7] = glue("  --chunk_queued_line: ", {color_chunk_queued_line}, ";")
+        css[8] = glue("  --chunk_executed_line: ", {color_chunk_executed_line}, ";")
+        css[9] = glue("  --chunk_resting_line: ", {color_chunk_resting_line}, ";")
+        css[10] = glue("  --chunk_error_line: ", {color_chunk_error_line}, ";")
+        css[11] = glue("  --active_line: ", {color_active_line}, ";")
+        css[12] = glue("  --cursor: ", {color_cursor}, ";")
+        css[13] = glue("  --function_color: ", {color_function_color}, ";")
+        css[14] = glue("  --library: ", {color_library}, ";")
+        css[15] = glue("  --keywords: ", {color_keywords}, ";")
+        css[16] = glue("  --background_image: ", "url('logos/", {bg_team}, ".gif')", ";")
         writeLines(css, "~/.R/rstudio/themes/NHL_Light.rstheme")
         rstudioapi::applyTheme("NHL_Light")
       }
