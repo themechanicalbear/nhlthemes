@@ -1,6 +1,7 @@
 options(stringsAsFactors = FALSE)
 
-themes_folder_mac <- '~/.R/rstudio/themes/'
+theme_folder_mac <- '~/.R/rstudio/themes/'
+theme_logos_mac <- glue({theme_folder_mac}, "logos")
 lib_path <- .Library
 
 nhl_theme_switcher <- function() {
@@ -80,14 +81,18 @@ nhl_theme_switcher <- function() {
 
       if (input$dark == "light") {
         # Check to make sure the NHL Light theme exists else create
-        if (!file.exists(glue(themes_folder_mac, "NHL_Light.rstheme"))) {
+        if (!file.exists(glue(theme_folder_mac, "NHL_Light.rstheme"))) {
           nhl_theme_css <- readLines(system.file("extdata", "NHL_Light.rstheme", package = "nhlthemes"), -1)
-          writeLines(nhl_theme_css, glue(themes_folder_mac, "NHL_Light.rstheme"))
+          writeLines(nhl_theme_css, glue(theme_folder_mac, "NHL_Light.rstheme"))
         }
         # Check to see if logo for team is in the themes directory if not copy from package library
-        if (!file.exists(glue(themes_folder_mac, "/logos/", bg_team, ".gif"))) {
+        if (!dir.exists(theme_logos_mac)) {
+          dir.create(theme_logos_mac, showWarnings = FALSE, recursive = TRUE)
+        }
+
+        if (!file.exists(glue(theme_logos_mac, "/", bg_team, ".gif"))) {
           file.copy(glue(lib_path, "/nhlthemes/extdata/logos/", bg_team, ".gif"),
-                    glue(themes_folder_mac, "logos/", bg_team, ".gif"))
+                    glue(theme_logos_mac, "/", bg_team, ".gif"))
         }
         css <- readLines("~/.R/rstudio/themes/NHL_Light.rstheme",-1)
         css[6] = glue("  --gutter_line_numbers: ", {color_gutter_line_numbers}, ";")
