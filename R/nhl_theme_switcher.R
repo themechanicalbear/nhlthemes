@@ -1,6 +1,7 @@
 options(stringsAsFactors = FALSE)
 
 themes_folder_mac <- '~/.R/rstudio/themes/'
+lib_path <- .Library
 
 nhl_theme_switcher <- function() {
   ui <- fluidPage(
@@ -84,8 +85,12 @@ nhl_theme_switcher <- function() {
           nhl_theme_css <- readLines(system.file("extdata", "NHL_Light.rstheme", package = "nhlthemes"), -1)
           writeLines(nhl_theme_css, glue(themes_folder_mac, "NHL_Light.rstheme"))
         }
+        if (!file.exists(glue(themes_folder_mac, "/logos/", bg_team, ".gif"))) {
+          file.copy(glue(lib_path, "/nhlthemes/extdata/logos/", bg_team, ".gif"),
+                    glue(themes_folder_mac, "logos/", bg_team, ".gif"))
+        }
         css <- readLines("~/.R/rstudio/themes/NHL_Light.rstheme",-1)
-        css[6] = paste0("  --gutter_line_numbers: ", color_gutter_line_numbers, ";")
+        css[6] = glue("  --gutter_line_numbers: ", color_gutter_line_numbers, ";")
         css[7] = paste0("  --chunk_queued_line: ", color_chunk_queued_line, ";")
         css[8] = paste0("  --chunk_executed_line: ", color_chunk_executed_line, ";")
         css[9] = paste0("  --chunk_resting_line: ", color_chunk_resting_line, ";")
@@ -96,6 +101,7 @@ nhl_theme_switcher <- function() {
         css[14] = paste0("  --library: ", color_library, ";")
         css[15] = paste0("  --keywords: ", color_keywords, ";")
         css[16] = paste0("  --background_image: ", "url('logos/", bg_team, ".gif')", ";")
+        # css[16] = paste0("  --background_image: ", "url(", lib_path, "/nhlthemes/extdata/logos/", bg_team, ".gif)", ";")
         writeLines(css, "~/.R/rstudio/themes/NHL_Light.rstheme")
         rstudioapi::applyTheme("NHL_Light")
       }
@@ -116,7 +122,7 @@ nhl_theme_switcher <- function() {
     observeEvent(input$flyers_click, {set_colors("flyers")})
     observeEvent(input$hurricanes_click, {set_colors("hurricanes")})
     observeEvent(input$islanders_click, {set_colors("islanders")})
-    observeEvent(input$jackets_click, {set_colors("Cjackets")})
+    observeEvent(input$jackets_click, {set_colors("jackets")})
     observeEvent(input$jets_click, {set_colors("jets")})
     observeEvent(input$kings_click, {set_colors("kings")})
     observeEvent(input$knights_click, {set_colors("knights")})
@@ -228,7 +234,7 @@ nhl_theme_switcher <- function() {
       list(src = system.file("extdata/logos", "wings.gif", package = "nhlthemes"))}, deleteFile = FALSE)
   }
 
-  viewer <- dialogViewer(dialogName = "NHL Themes", width = 1200, height = 600)
+  viewer <- dialogViewer(dialogName = "NHL Themes", width = 1200, height = 700)
   runGadget(ui, server, viewer = viewer)
 }
 
