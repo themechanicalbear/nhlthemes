@@ -7,11 +7,11 @@ nhlthemes enables R Studio users to quickly switch between the NHL team colored 
 * Create screen recording with quicktime
 * brew install ffmpeg
 * brew install gifsicle
-* ffmpeg -i Untitled.mov -pix_fmt rgb24 -r 10 -f gif - | gifsicle --optimize=3 --delay=3 > nhlthemes_demo.gif
+* ffmpeg -i Untitled.mov -pix_fmt rgb24 -r 10 -f gif - | gifsicle --optimize=3 --delay=3 > nhlthemes_Demo.gif
 * place output gif in package root
 
 Demo:
-![](nhlthemes_demo.gif)
+![](nhlthemes_Demo.gif)
 
 Once the nhlthemes package is installed, functionality is added automatically to the R Studio addins dropdown. No need to include `library(nhlthemes)` in your R scripts. 
 
